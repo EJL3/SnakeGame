@@ -1,10 +1,7 @@
 
-import math
-import random
 import pygame
 import random
-import tkinter as tk
-from tkinter import messagebox
+
 
 width = 500
 height = 500
@@ -20,8 +17,9 @@ class cube():
     def __init__(self, start, dirnx=1, dirny=0, color=(255, 0, 0)):
         self.pos = start
         self.dirnx = dirnx
-        self.dirny = dirny  # "L", "R", "U", "D"
+        self.dirny = dirny
         self.color = color
+        pygame.display.set_caption('Game Animation')
 
     def move(self, dirnx, dirny):
         self.dirnx = dirnx
@@ -48,7 +46,7 @@ class snake():
     turns = {}
 
     def __init__(self, color, pos):
-        # pos is given as coordinates on the grid ex (1,5)
+
         self.color = color
         self.head = cube(pos)
         self.body.append(self.head)
@@ -163,7 +161,7 @@ def main():
     win = pygame.display.set_mode((width, height))
     s = snake((255, 0, 0), (10, 10))
     s.addCube()
-    snack = cube(randomSnack(rows, s), color=(0, 255, 0))
+    snack = cube(randomSnack(rows, s), color=(255, 60, 0))
     flag = True
     clock = pygame.time.Clock()
 
@@ -178,7 +176,7 @@ def main():
 
         if s.body[0].pos == snack.pos:
             s.addCube()
-            snack = cube(randomSnack(rows, s), color=(0, 255, 0))
+            snack = cube(randomSnack(rows, s), color=(50, 255, 50))
 
         for x in range(len(s.body)):
             if s.body[x].pos in list(map(lambda z: z.pos, s.body[x + 1:])):
