@@ -1,7 +1,12 @@
 
 import pygame
+from pygame import mixer
 import random
 
+pygame.init()
+pygame.display.set_caption('Game Animation')
+mixer.music.load('bgm.mp3')
+mixer.music.play(-1)
 
 width = 500
 height = 500
@@ -19,8 +24,7 @@ class cube():
         self.dirnx = dirnx
         self.dirny = dirny
         self.color = color
-        pygame.display.set_caption('Game Animation')
-
+        
     def move(self, dirnx, dirny):
         self.dirnx = dirnx
         self.dirny = dirny
