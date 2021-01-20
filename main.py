@@ -4,7 +4,7 @@ from pygame import mixer
 import random
 
 pygame.init()
-pygame.display.set_caption('Game Animation')
+pygame.display.set_caption('By Rizwan.AR')
 mixer.music.load('bgm.mp3')
 mixer.music.play(-1)
 
